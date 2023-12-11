@@ -1,0 +1,93 @@
+/**
+ * Hank Heiselbetz
+ * CSS code creating a calculator
+ * 12/9/2023
+ */ 
+
+
+/**
+ * Sets the font as TNR, and makes letters bold
+ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Times New Roman', sans-serif;
+    font-weight: bold;
+}
+
+/**
+ * Creates a background that changes from blue to green
+ */
+body {
+    padding: 0;
+    margin: 0%;
+    background: linear-gradient(to right, #00AAFF, #00FF6C);
+}
+
+/**
+ * Creates grid length, altering the button sizes
+ */
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: minmax(75px, auto) repeat(5, 75px);
+}
+
+/**
+ * Creates a Slightly blue background
+ */
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2 rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255,255,255,.75);
+}
+
+/**
+ * When hovering a button, that buttons turns white
+ */
+.calculator-grid > button:hover {
+    background-color: rgba(255,255,255,1)
+}
+
+/**
+ * Makes the columns with "span-two" span 2 lengths
+ */
+.span-two {
+    grid-column: span 2;
+}
+
+/**
+ * Creates the top border
+ * Makes it black
+ */
+.output {
+    grid-column : 1 / -1;
+    background-color: rgba(0,0,0,.75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/**
+ * Shows previous operand in a nice white color
+ */
+.output .previous-operand {
+    color: rgba(255,255,255,.75);
+    font-size: 1.5rem;
+}
+
+/**
+ * Makes current operand pure white and larger than last input
+ */
+.output .current-operand {
+    color: white;
+    font-size: 2rem;
+}
